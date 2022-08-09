@@ -1,10 +1,10 @@
-# Getting Started with Create React App
+# Getting Started with Create React App - SARAHS TEST
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the project directory, you can run:s
 
 ### `npm start`
 
