@@ -44,6 +44,6 @@ comments: [
      ],
 });
 
-const Book = model('Book', bookSchema);
+const Books = model('Books', bookSchema);
 
-module.exports = Book;
+module.exports = Books;

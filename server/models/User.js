@@ -22,7 +22,13 @@ const userSchema = new Schema({
   age: {
     type: String,
     trim: true,
-  }
+  },
+  books: [
+    { 
+      type: Schema.Types.ObjectId,
+      ref: "Books"
+    
+  }]
   // If your user needs more properties, add them here. Don't forget to add them to the typeDefs.js, resolvers.js and the userSeeds.
 });
 
