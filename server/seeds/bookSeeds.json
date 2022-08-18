@@ -1,42 +1,8 @@
 [
     {
-        "bookName": "",
-        "bookAuthor": "",
-        "bookDescription":"" 
-    },
-    {
-        "bookName": "",
-        "bookAuthor": "",
-        "bookDescription":"" 
-    },
-    {
-        "bookName": "",
-        "bookAuthor": "",
-        "bookDescription":"" 
-    },
-    {
-        "bookName": "",
-        "bookAuthor": "",
-        "bookDescription":"" 
-    },
-    {
-        "bookName": "",
-        "bookAuthor": "",
-        "bookDescription":"" 
-    },
-    {
-        "bookName": "",
-        "bookAuthor": "",
-        "bookDescription":"" 
-    },
-    {
-        "bookName": "",
-        "bookAuthor": "",
-        "bookDescription":"" 
-    },
-    {
-        "bookName": "",
-        "bookAuthor": "",
-        "bookDescription":"" 
+        "bookName": "Lordoftherings",
+        "bookAuthor": "J R R Tolkien",
+        "bookDescription":"Middle earth" 
     }
+    
 ]

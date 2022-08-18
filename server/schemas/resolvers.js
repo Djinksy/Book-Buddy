@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Book } = require('../models');
+const { User, Books } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -12,10 +12,10 @@ const resolvers = {
     },
     books: async (parent, { username }) => {
       const params = username ? { username } : {};
-      return Book.find(params).sort({ createdAt: -1});
+      return Books.find(params).sort({ createdAt: -1});
     },
      book: async (parent, { bookId }) => {
-  return Book.fineOne({ _id: bookId });
+  return Books.fineOne({ _id: bookId });
     },
 
     me: async (parent, args, context) => {
@@ -52,7 +52,7 @@ const resolvers = {
 
     addBook: async (parent, { bookName }, context) => {
       if (context.user) {
-        const book = await Book.create({
+        const book = await Books.create({
           bookName,
           bookAuthor: context.user.username,
         });
@@ -69,7 +69,7 @@ const resolvers = {
 
     addComment: async (parent, { bookId, commentText}, context) => {
       if (context.user) {
-        return Book.findOneAndUpdate(
+        return Books.findOneAndUpdate(
           { _id: bookId },
           {
             $addToSet: {
@@ -87,7 +87,7 @@ const resolvers = {
 
     removeBook: async (parent, { bookId }, context) => {
       if (context.user) {
-        const book = await Book.findOneAndDelete({
+        const book = await Books.findOneAndDelete({
           _id: bookId,
           bookAuthor: context.user.username,
         });
@@ -102,7 +102,7 @@ const resolvers = {
     },
     removeComment: async (parent, { bookId, commentId }, context) => {
       if (context.user) {
-        return Book.findOneAndUpdate(
+        return Books.findOneAndUpdate(
           { _id: bookId },
           {
             $pull: {
