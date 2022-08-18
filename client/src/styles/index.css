@@ -27,7 +27,58 @@ body {
  */
 main {
   display: block;
+  background-color: #2d3142ff;
+  height: 100vh;
+  width: 100vw;
 }
+
+.signUp {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.card {
+  margin-bottom: 1rem;
+  width: 450px;
+  background-color: #282b3bff;
+  border-radius: 60px;
+  padding: 50px
+}
+
+.card-header {
+  color: #715b64ff;
+  text-align: center;
+  font-size: 40px;
+}
+
+.card-body {
+  padding: 0.375rem;
+  display: flex;
+}
+
+.signupBtn {
+  width: 115px;
+  height: 50px;
+  margin-left: 105px;
+  border-radius: 20px;
+  background-color: #715b64ff;
+  color: white;
+  font-size: 20px;
+}
+
+form .form-input {
+  width: 100%;
+  padding: 0.75rem;
+  color: #b2cede;
+  background-color: #282b3bff;
+  margin: 0.625rem 0;
+  font-size: 1.2rem;
+  border: 1px solid #b2cede;
+  border-radius: 0.3rem;
+}
+
 
 /**
  * Correct the font size and margin on `h1` elements within `section` and
@@ -73,18 +124,6 @@ a {
   background-color: transparent;
 }
 
-/**
- * 1. Remove the bottom border in Chrome 57-
- * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
- */
-abbr[title] {
-  border-bottom: none;
-  /* 1 */
-  text-decoration: underline;
-  /* 2 */
-  text-decoration: underline dotted;
-  /* 2 */
-}
 
 /**
  * Add the correct font weight in Chrome, Edge, and Safari.
@@ -149,7 +188,6 @@ img {
  * 1. Change the font styles in all browsers.
  * 2. Remove the margin in Firefox and Safari.
  */
-button,
 input,
 optgroup,
 select,
@@ -168,7 +206,7 @@ textarea {
  * Show the overflow in IE.
  * 1. Show the overflow in Edge.
  */
-button,
+
 input {
   /* 1 */
   overflow: visible;
@@ -178,7 +216,7 @@ input {
  * Remove the inheritance of text transform in Edge, Firefox, and IE.
  * 1. Remove the inheritance of text transform in Firefox.
  */
-button,
+
 select {
   /* 1 */
   text-transform: none;
@@ -187,7 +225,7 @@ select {
 /**
  * Correct the inability to style clickable types in iOS and Safari.
  */
-button,
+
 [type='button'],
 [type='reset'],
 [type='submit'] {
@@ -428,10 +466,6 @@ a {
   text-decoration: none;
 }
 
-a:hover {
-  color: #065b83;
-  text-decoration: underline;
-}
 
 /* HEIGHT / WIDTH UTILS */
 .w-100 {
@@ -1084,34 +1118,6 @@ a:hover {
   background-color: #31a9e1;
 }
 
-.card {
-  border: 1px solid #1a1a1a;
-  margin-bottom: 1rem;
-}
-
-.card .card-header {
-  padding: 0.375rem;
-  background-color: #2d3e50;
-  color: #d9e9e8;
-}
-
-.card .card-body {
-  padding: 0.375rem;
-}
-
-.card .card-footer {
-  border-top: 1px solid #1a1a1a;
-  padding: 0.375rem;
-}
-
-.card.card-rounded {
-  border-radius: 0.3rem;
-}
-
-.card.card-rounded .card-header {
-  border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
-}
-
 form {
   width: 100%;
 }
@@ -1122,7 +1128,6 @@ form .form-group {
   margin: 0.625rem 0;
 }
 
-form .form-input,
 form .form-textarea {
   display: block;
 }
@@ -1143,16 +1148,6 @@ form .form-label {
   margin: 0.625rem 0 0.25rem 0.3rem;
 }
 
-form .form-input {
-  width: 100%;
-  padding: 0.75rem;
-  color: #1a1a1a;
-  background-color: #ffffff;
-  margin: 0.625rem 0;
-  font-size: 1.2rem;
-  border: 1px solid #484848;
-  border-radius: 0.3rem;
-}
 
 form .form-input.form-input-squared {
   border-radius: 0;
