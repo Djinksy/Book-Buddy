@@ -3,8 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
-import Container from 'react-bootstrap/Container';
-
 import Home from './pages/Home';
 import Profile from './pages/Profile';
 import NotFound from './pages/Notfound';
@@ -39,7 +37,7 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <Header/>
-        <Container>
+        <div className="main">
           <Routes>
             <Route 
               path="/" 
@@ -62,7 +60,7 @@ function App() {
               element={<NotFound />}
             />
           </Routes>
-        </Container>
+        </div>
       </Router>
     </ApolloProvider>
   );
