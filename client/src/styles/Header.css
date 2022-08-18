@@ -1,0 +1,47 @@
+* {
+  font-family: Arial, Helvetica, sans-serif
+}
+.header {
+  background: #282b3bff;
+  height: 80px;
+  display: flex;
+}
+
+.header h1 {
+  margin: 0;
+  padding-top: 75px;
+  text-align: center;
+  color: white;
+  font-size: 3rem;
+}
+
+.logoImg {
+height: 50px;
+ margin: 15px;
+}
+
+.login {
+  padding: 2px;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  align-items: center;
+}
+
+.link {
+  padding: 4px;
+  margin-left: 10px;
+  margin-right: 20px;
+  font-size: 20px;
+  text-decoration: none;
+  color: #b2cede;
+}
+
+.link:hover{
+  background-color: #b2cede;
+  color: #977b86;
+  padding: 8px;
+  border: 1px solid #333;
+  border-radius: 15px;
+  opacity: 0.7;
+}
