@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-const dateFormat = require('../../../../UADEL-VIRT-FSF-PT-02-2022-U-LOL/21-MERN/01-Activities/26-Stu_Resolver-Context/Solved/server/utils/dateFormat');
+const dateFormat = require('../utils/dateFormat');
 
 
 const bookSchema = new Schema({
@@ -40,7 +40,6 @@ comments: [
             default: Date.now,
             get: (timestamp) => dateFormat(timestamp),
         },
-   
        },
      ],
 });
