@@ -1,12 +1,23 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User } = require('../models');
+const { User, Book } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
     users: async () => {
-      return User.find();
+      return User.find().populate('books');
     },
+    user: async (parent, { username }) => {
+    return User.findOne({ username }).populate('books');
+    },
+    books: async (parent, { username }) => {
+      const params = username ? { username } : {};
+      return Book.find(params).sort({ createdAt: -1});
+    },
+     book: async (parent, { bookId }) => {
+  return Book.fineOne({ _id: bookId });
+    },
+
     me: async (parent, args, context) => {
       if (context.user) {
         return User.findOne({ email: context.user.email});
@@ -37,6 +48,74 @@ const resolvers = {
       const token = signToken(user);
 
       return { token, user };
+    },
+
+    addBook: async (parent, { bookName }, context) => {
+      if (context.user) {
+        const book = await Book.create({
+          bookName,
+          bookAuthor: context.user.username,
+        });
+
+      await User.findOneAndUpdate(
+        { _id: context.user._id},
+        { $addToSet: { books: book._id} }
+      );
+      
+      return book;
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
+
+    addComment: async (parent, { bookId, commentText}, context) => {
+      if (context.user) {
+        return Book.findOneAndUpdate(
+          { _id: bookId },
+          {
+            $addToSet: {
+              comments: { commentText, commentAuthor: context.user.username },
+            },
+          },
+          {
+            new: true,
+            runValidators: true,
+          }
+        );
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
+
+    removeBook: async (parent, { bookId }, context) => {
+      if (context.user) {
+        const book = await Book.findOneAndDelete({
+          _id: bookId,
+          bookAuthor: context.user.username,
+        });
+
+        await User.fineOneAndUpdate(
+          { _id: context.user._id },
+          { $pull: { books: book._id} }
+        );
+        return book;
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
+    removeComment: async (parent, { bookId, commentId }, context) => {
+      if (context.user) {
+        return Book.findOneAndUpdate(
+          { _id: bookId },
+          {
+            $pull: {
+              comments: {
+                _id: commentId,
+                commentAuthor: context.user.username,
+              },
+            },
+          },
+          { new: true }
+        );
+      }
+      throw new AuthenticationError('You need to be logged in!');
     },
   },
 };
