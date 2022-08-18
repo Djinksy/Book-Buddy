@@ -39,9 +39,9 @@ mutation addBook($bookName: String!) {
 }
 `;
 
-export const ADD_COMMENT = gql`
-mutation addComment($bookId: ID!, $commentText" String!) {
-  addComment(bookId: $bookId, commentText: $commentText){
+/*export const ADD_COMMENT = 
+gql`/mutation addComment($bookId: ID!, $commentText" String!) {
+ addComment(bookId: $bookId, commentText: $commentText){
     _id
     bookName
     bookAuthor
@@ -53,4 +53,4 @@ mutation addComment($bookId: ID!, $commentText" String!) {
     }
   }
 }
-`;
+`;*/

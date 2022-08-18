@@ -1,49 +1,57 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Nav from 'react-bootstrap/Nav';
-
 import Auth from '../../utils/auth';
+import '../../styles/Header.css'
+import logo from "../../Images/bookbuddyimg.png"
 
 const Header = () => {
   const logout = (event) => {
     event.preventDefault();
     Auth.logout();
   };
+
   return (
-    <Nav>
-      <Nav.Item>
-        <Nav.Link as={Link} to="/">
-          Home
-        </Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link as={Link} to="/profile">
-          Profile
-        </Nav.Link>
-      </Nav.Item>
+    <header className="header">
+      <div>
+        <Link to="/">
+        <img
+            src={logo}
+            alt="example"
+            className="logoImg"
+          />
+        </Link>
+      </div>
       {Auth.loggedIn() ? (
         <>
-          <Nav.Item>
-            <Nav.Link onClick={logout}>
+        <div>
+        <Link to="/profile" className="link">
+          Profile
+        </Link>
+      </div>
+      <div>
+        <Link to="/bookshelf" className="link">
+          BookShelf
+        </Link>
+      </div>
+          <div>
+            <Link onClick={logout}>
               Logout
-            </Nav.Link>
-          </Nav.Item>
+            </Link>
+          </div>
         </>
       ) : (
         <>
-          <Nav.Item>
-            <Nav.Link as={Link} to="/login">
+        <div className="login">
+            <Link to="/login" className="link">
               Login
-            </Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link as={Link} to="/signup" >
+            </Link>
+            <Link to="/signup"className="link">
               Signup
-            </Nav.Link>
-          </Nav.Item>
+            </Link>
+        </div>
         </>
       )}
-    </Nav>
+    </header>
   );
 };
 
