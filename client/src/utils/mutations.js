@@ -23,3 +23,34 @@ mutation Login($email: String!, $password: String!) {
     }
   }
 }`
+
+export const ADD_BOOK = gql`
+mutation addBook($bookName: String!) {
+  addBook (bookName: $bookName) {
+    _id
+    bookName
+    bookAuthor
+    createdAt
+    comments {
+      _id
+      commentText
+    }
+  }
+}
+`;
+
+export const ADD_COMMENT = gql`
+mutation addComment($bookId: ID!, $commentText" String!) {
+  addComment(bookId: $bookId, commentText: $commentText){
+    _id
+    bookName
+    bookAuthor
+    createdAt
+    comments {
+      _id
+      commentText
+      createdAt
+    }
+  }
+}
+`;
