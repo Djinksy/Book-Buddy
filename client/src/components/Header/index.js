@@ -13,8 +13,8 @@ const Header = () => {
   return (
     <header className="header">
       <div>
-        <Link to="/">
-        <img
+        <Link to="/home">
+          <img
             src={logo}
             alt="example"
             className="logoImg"
@@ -22,33 +22,33 @@ const Header = () => {
         </Link>
       </div>
       {Auth.loggedIn() ? (
-        <>
-        <div>
-        <Link to="/profile" className="link">
-          Profile
-        </Link>
-      </div>
-      <div>
-        <Link to="/bookshelf" className="link">
-          BookShelf
-        </Link>
-      </div>
+        <div className="login">
           <div>
-            <Link onClick={logout}>
-              Logout
+            <Link to="/profile" className="link">
+              Profile
             </Link>
           </div>
-        </>
+          <div>
+            <Link to="/bookshelf" className="link">
+              BookShelf
+            </Link>
+          </div>
+          <div>
+            <button onClick={logout} className="btnLink">
+              Logout
+            </button>
+          </div>
+        </div>
       ) : (
         <>
-        <div className="login">
-            <Link to="/login" className="link">
+          <div className="login">
+            <Link to="/" className="link">
               Login
             </Link>
-            <Link to="/signup"className="link">
+            <Link to="/signup" className="link">
               Signup
             </Link>
-        </div>
+          </div>
         </>
       )}
     </header>

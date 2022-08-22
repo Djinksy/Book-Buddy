@@ -7,13 +7,13 @@ const NotFound = () => {
         <>
             <main>
                 <div className="pageError">
-                    <p>404! Page Not Found. </p>
+                    <p>404! Page Not Found </p>
                     <p>Now go read a book </p>
                     <img
                         src={logo}
                         alt="reading-man"
                         className="reading-Img"
-          />
+                    />
                 </div>
             </main>
         </>
