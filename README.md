@@ -2,13 +2,24 @@
 
 ![GitHub](https://img.shields.io/badge/license-Apache-yellow.svg)
 
+![homepage-screenshot](./client/src/Images/screenshot-1.png)
+
+## Live Link: https://cryptic-castle-86081.herokuapp.com/
+Application error received when open
+
 ## Table Of Contents
 * [Description](#description)
+
 * [Installation](#installation)
+
 * [Usage](#usage)
+
 * [Credits](#credits)
+
 * [License](#license)
+
 * [Contributions](#contributions)
+
 * [Questions](#questionscontact)
 
 ## Description
@@ -16,6 +27,16 @@
 Book Buddy was created as a way for bookworms all over the world to come together to share their love of books in a global book club. 
 
 Book Buddy brings together the best parts of social media and the best parts of your local book club, to provide an online platform where users can search books, post about their recent reads, and comment on their friends recently read books. They can even find other users who have recently read the same books as them. 
+
+## User Story 
+
+```md
+AS AN honest bookworm
+
+I WANT to be able to share my thoughts on the books that I am reading
+
+SO THAT I can enjoy my reading experience with friends
+```
 
 ## Installation
 To install the dependencies required for this repository, please run the following command:
