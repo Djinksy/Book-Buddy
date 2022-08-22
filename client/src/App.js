@@ -40,7 +40,7 @@ function App() {
         <div className="main">
           <Routes>
             <Route 
-              path="/" 
+              path="/home" 
               element={<Home />}
             />
             <Route 
@@ -48,7 +48,7 @@ function App() {
               element={<Profile/>}
             />
             <Route 
-              path="/login" 
+              path="/" 
               element={<Login/>}
             />
             <Route 

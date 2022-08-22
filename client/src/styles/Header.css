@@ -37,7 +37,28 @@ height: 50px;
   color: #b2cede;
 }
 
+.btnLink {
+  padding: 8px;
+  margin-left: 10px;
+  margin-right: 20px;
+  font-size: 20px;
+  text-decoration: none;
+  color: #b2cede;
+  background-color: transparent;
+  border: none;
+
+}
+
+
 .link:hover{
+  background-color: #b2cede;
+  color: #977b86;
+  padding: 8px;
+  border: 1px solid #333;
+  border-radius: 15px;
+  opacity: 0.7;
+}
+.btnLink:hover{
   background-color: #b2cede;
   color: #977b86;
   padding: 8px;
