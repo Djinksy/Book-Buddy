@@ -49,9 +49,9 @@ const Signup = () => {
                 <Link to="/">back to the homepage.</Link>
               </p>
             ) : (
-              <form onSubmit={handleFormSubmit}>
+              <form onSubmit={handleFormSubmit}className="home-form">
                 <input
-                  className="form-input"
+                  className="log-input"
                   placeholder="Your username"
                   name="username"
                   type="text"
@@ -59,7 +59,7 @@ const Signup = () => {
                   onChange={handleChange}
                 />
                 <input
-                  className="form-input"
+                  className="log-input"
                   placeholder="Your email"
                   name="email"
                   type="email"
@@ -67,7 +67,7 @@ const Signup = () => {
                   onChange={handleChange}
                 />
                 <input
-                  className="form-input"
+                  className="log-input"
                   placeholder="******"
                   name="password"
                   type="password"

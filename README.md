@@ -28,7 +28,7 @@ npm install
 Make sure you download all the required packages.
 Open the file in VS code and open the terminal and run the command 
 ```
-npm start
+npm run develop
 ```
 
 ## Credits
